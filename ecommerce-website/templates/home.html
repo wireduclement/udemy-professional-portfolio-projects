@@ -1,0 +1,30 @@
+{% include "header.html" %}
+
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <p><img src="../static/svg/code.svg" alt="code brackets"><strong> TechEmporium</strong></p>
+        </div>
+    </header>
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <h1 class="display-4 fw-bold text-body-emphasis">TECH EMPORIUM</h1>
+        <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Empowering Your Future with Cutting-Edge IT Skills <br>
+            Welcome to <strong>TechEmporium</strong>, your ultimate destination for high-quality IT education. 
+            In today's fast-paced digital world, staying ahead of the curve is essential. Whether 
+            you're looking to kickstart your career, advance in your current role, or simply expand 
+            your knowledge, our expertly designed courses provide the skills you need to succeed. <br>
+            </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+            <a href="{{ url_for('index') }}"><button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">View Courses</button></a>
+        </div>
+        </div>
+        <div class="overflow-hidden" style="max-height: 60vh;">
+        <div class="container px-5">
+            <img src="../static/images/logo.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+        </div>
+        </div>
+    </div>
+</div>
+
+{% include "footer.html" %}

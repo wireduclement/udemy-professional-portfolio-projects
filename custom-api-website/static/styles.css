@@ -1,0 +1,22 @@
+body {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: whitesmoke;
+}
+.user-info {
+    display: flex;
+    align-items: flex-start;
+}
+.user-info img {
+    margin-right: 20px;
+    border-radius: 50%;
+    height: 100%;
+    padding: 30px;
+
+}
+.user-details {
+    list-style-type: none;
+    padding: 0;
+    line-height: 2;
+}

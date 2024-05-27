@@ -1,0 +1,70 @@
+{% include "header.html" %}
+
+<div class="container">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+        <img src="{{ post.img_url }}" class="d-block mx-lg-auto img-fluid" alt="#" width="700" height="500" loading="lazy">
+        </div>
+        <div class="col-lg-6">
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ post.name }}</h1>
+        <p class="lead">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+            deserunt mollit anim id est laborum."
+        </p>
+        </div>
+        <div class="container px-4 py-5" id="icon-grid">
+            <h2 class="pb-2 border-bottom">Side Allure</h2>
+        
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+              <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"></use></svg>
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Seats</h3>
+                  <p>Seats availability: {{ post.seats }}</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#cpu-fill"></use></svg>
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Wifi</h3>
+                  <p>Check for Wifi: {{ post.has_wifi }}</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#calendar3"></use></svg>
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Socket</h3>
+                  <p>Socket availability: {{ post.has_sockets }}</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#home"></use></svg>
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Can take calls</h3>
+                  <p>Free to take calls: {{ post.can_take_calls }}</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#speedometer2"></use></svg>
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Coffee Price Range</h3>
+                  <p>Coffee Price: {{ post.coffee_price }}</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#toggles2"></use></svg>
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Has Toilet</h3>
+                  <p>Toilet availability: {{ post.has_toilet }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+
+{% include "footer.html" %}

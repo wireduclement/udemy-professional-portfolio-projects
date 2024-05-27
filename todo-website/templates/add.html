@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+{% block title %}Add a todo{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="col-sm-12 col-md-6">
+      {% if is_edit: %}
+      <h1>Edit Todo</h1>
+      {% else: %}
+      <h1>Add new todo</h1>
+      {% endif %}
+      
+        {{ render_form(form, novalidate=True) }}
+
+      <p class="space-above">
+        {% if is_edit: %}
+        <br><a href="{{ url_for('home') }}">Cancel</a>
+        {% else: %}
+        <br><a href="{{ url_for('home') }}">See all todos</a>
+        {% endif %}
+      </p>
+      
+    </div>
+</div>
+
+{% endblock %}

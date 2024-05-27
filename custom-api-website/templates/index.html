@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css"/>
+    <title>randomfakeuser.me</title>
+</head>
+<body>
+    <h1 style="text-align: center">Fake Credentials Generator</h1><hr>
+    <form method="get">
+        <label for="gender">Select Gender:</label>
+        <select name="gender" id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="random" selected>Random</option>
+        </select>
+        <button type="submit" style="background-color: rgb(250, 80, 80);">Generate</button>
+    </form>
+    {% if gender != 'random' %}
+    <div class="user-info">
+        {% if gender == 'male' %}
+        <img src="../static/male.png" alt="Male User Picture">
+        {% else %}
+        <img src="../static/female.png" alt="Female User Picture">
+        {% endif %}
+        <ul class="user-details">
+            <li><strong>Name: </strong>{{ fname }}</li>
+            <li><strong>Last Name: </strong>{{ lname }}</li>
+            <li><strong>Gender: </strong>{{ gender }}</li> 
+            <li><strong>City: </strong>{{ city }}</li>
+            <li><strong>State: </strong>{{ state }}</li>
+            <li><strong>Country: </strong>{{ country }}</li>
+            <li><strong>Email: </strong>{{ email }}</li>
+            <li><strong>Username: </strong>{{ username }}</li>
+            <li><strong>Password: </strong>{{ password }}</li>
+            <li><strong>Date of Birth: </strong>{{ date }}</li>
+            <li><strong>Age: </strong>{{ age }}</li>
+            <li><strong>Phone: </strong>{{ phone }}</li>
+        </ul>
+    </div>
+    {% endif %}
+</body>
+</html>

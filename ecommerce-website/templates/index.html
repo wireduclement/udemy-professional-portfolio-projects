@@ -1,0 +1,107 @@
+{% include "header.html" %}
+
+<body>
+    <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <div class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <p><img src="../static/svg/code.svg" alt="code brackets"><strong> TechEmporium</strong></p>
+            </div>
+
+           <a href="{{ url_for('home') }}"><p><img src="../static/svg/home.svg" style="padding-left: 160px;"></p></a>
+           <div class="col-md-3 text-end">
+            {% if current_user.is_authenticated %}
+            <form action="{{ url_for('logout') }}">
+              <p><strong>Hi, {{ current_user.name }}  <img src="../static/svg/person.svg" alt="person"></strong></p>
+              <a href="{{ url_for('my_courses') }}"><button type="button" class="btn btn-primary">My courses</button></a>
+              <button type="submit" class="btn btn-outline-primary me-2">Logout</button>
+            </form>
+            {% else %}
+            <a href="{{ url_for('login') }}"><button type="button" class="btn btn-outline-primary me-2" >Login</button></a>
+            <a href="{{ url_for('signup') }}"><button type="button" class="btn btn-primary" >Signup</button></a>
+            {% endif %}
+           </div>
+        </header>
+
+        <div id="carouselloginCaptions" class="carousel slide custom-carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselloginCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselloginCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselloginCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../static/images/img1.jpg" class="d-block w-100" alt="codestore.com">
+                <div class="carousel-caption d-none d-md-block">
+                  <h3>If you can dream it, you can code it.</h3>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="../static/images/img2.jpg" class="d-block w-100" alt="codestore.com">
+                <div class="carousel-caption d-none d-md-block">
+                  <h3>Lead your best life with learning new skill.</h3>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="../static/images/img3.jpg" class="d-block w-100" alt="codestore.com">
+                <div class="carousel-caption d-none d-md-block">
+                  <h3>Subscribe to the best of Tech Emporium</h3>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselloginCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselloginCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Auth Prompt Modal -->
+        <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="authModalLabel">Please Login or Sign Up</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>You need to be logged in to purchase a course.</p>
+              </div>
+              <div class="modal-footer">
+                <a href="{{ url_for('login') }}" class="btn btn-primary">Login</a>
+                <a href="{{ url_for('signup') }}" class="btn btn-secondary">Sign Up</a>
+              </div>
+            </div>
+          </div>
+        </div>      
+        
+        <div class="album py-5 bg-body-tertiary">
+          <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              {% for course in courses %}
+              <div class="col mb-4">
+                <div class="card shadow-sm">
+                  <img class="bd-placeholder-img card-img-top" src="{{ course.img_url }}" width="100" height="250">
+                  <div class="card-body">
+                    <p class="card-text"><strong>{{ course.title }}</strong></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        {% if current_user.is_authenticated %}
+                        <button class="btn btn-sm btn-primary buy-button">Buy ${{ course.price }}</button>
+                        {% else %}
+                        <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#authModal">Buy ${{ course.price }}</button>
+                        {% endif %}
+                      </div>
+                      <small class="text-body-secondary">Rating {{ course.rating }}⭐⭐⭐⭐⭐</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+{% include "footer.html" %}

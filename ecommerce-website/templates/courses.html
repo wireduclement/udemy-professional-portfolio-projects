@@ -1,0 +1,25 @@
+{% include "header.html" %}
+
+
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <p><img src="../static/svg/code.svg" alt="Laptop"><strong> TechEmporium</strong></p>
+        </div>
+        <a href="{{ url_for('index') }}"><button type="button" class="btn btn-primary">Go back</button></a>
+    </header>
+    <main>
+
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <span class="fw-light">My Courses!</span><br><br><br>
+          <p class="lead text-body-secondary">:) oops! {{ current_user.name }}, You have no purchased courses</p>
+        </div>
+      </div>
+    </section>
+  
+    </main>
+</div>
+
+  {% include "footer.html" %}
