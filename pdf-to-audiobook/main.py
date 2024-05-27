@@ -10,7 +10,7 @@ class TextToSpeech:
         self.window.title("Text-To-Speech Application")
         self.window.config(padx=30, pady=10)
 
-        self.photo = PhotoImage(file="C:/Users/wired/Desktop/udemy/end-projects/pdf-to-audiobook/logo.png")
+        self.photo = PhotoImage(file="path/to/your/logo.png")
         self.canvas = Canvas(width=300, height=300)
         self.canvas.create_image(200, 200, image=self.photo)
         self.canvas.grid(row=0, column=2, columnspan=3, sticky="nsew")

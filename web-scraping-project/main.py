@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import csv
 
-OUTPUT_PATH = "C:/Users/wired/Desktop/udemy/end-projects/web-scraping-project/billboard-top-100.csv"
+OUTPUT_PATH = "path/to/your/billboard-top-100.csv"
 
 response = requests.get("https://www.billboard.com/charts/hot-100/")
 web_data = response.text

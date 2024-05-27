@@ -8,7 +8,7 @@ class Scoreboard(Turtle):
         super().__init__()
         self.color("white")
         self.score = 0
-        with open("C:/Users/wired/Desktop/udemy/end-projects/breakout-game/data.txt") as data:
+        with open("path/to/your/data.txt") as data:
             self.highscore = int(data.read())
         self.hideturtle()
         self.penup()
@@ -22,7 +22,7 @@ class Scoreboard(Turtle):
     def reset(self):
         if self.score > self.highscore:
             self.highscore = self.score
-            with open("C:/Users/wired/Desktop/udemy/end-projects/breakout-game/data.txt", mode="w") as data:
+            with open("path/to/your/data.txt", mode="w") as data:
                 data.write(f"{self.highscore}")
         self.score = 0
         self.update_score()

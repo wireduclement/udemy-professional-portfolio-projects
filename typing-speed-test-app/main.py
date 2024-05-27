@@ -15,7 +15,7 @@ class TypeSpeed:
         self.intro = Label(self.window, text="(Increase your Typing Speed & Accuracy.)", font=("Verdana", 10), bg=BGCOLOR)
         self.intro.grid(row=0, column=1)
 
-        self.texts = open("C:/Users/wired/Desktop/udemy/end-projects/typing-speed-test-app/data.txt", "r").read().split("\n")
+        self.texts = open("path/to/your/data.txt", "r").read().split("\n")
 
         self.sample_label = Label(text=random.choice(self.texts), font=("Arial", 15), height=10, width=50, wraplength=550)
         self.sample_label.grid(row=1, column=0, columnspan=3, pady=50)

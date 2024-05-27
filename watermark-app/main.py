@@ -7,7 +7,7 @@ import os
 root = Tk()
 root.title("Clement Wiredu - Custom watermarker")
 root.config(padx=100, pady=70)
-logo_file_path = "C:/Users/wired/Desktop/udemy/end-projects/watermark-app/logo.png"
+logo_file_path = "path/to/your/logo.png"
 selected_filename = ""
 
 
